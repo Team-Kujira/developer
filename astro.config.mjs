@@ -7,7 +7,7 @@ export default defineConfig({
   integrations: [tailwind()],
   markdown: {
     shikiConfig: {
-      theme: 'nord'
+      theme: 'one-dark-pro'
     }
   }
 });

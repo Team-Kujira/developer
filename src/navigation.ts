@@ -27,7 +27,22 @@ export const ROUTES: Route[] = [
     },
     {
         name: "Smart Contracts on Kujira",
-        path: "/sc-intro",
+        path: "/sc",
+        defaultExpanded: true,
+        subRoutes: [
+            {
+                name: "Using Oracle Price Feeds",
+                path: "/sc/oracles",
+            },
+            {
+                name: "Scheduling Recurring Actions",
+                path: "/sc/scheduler",
+            },
+            {
+                name: "Issuing Tokens from Smart Contracts",
+                path: "/sc/tokenfactory",
+            },
+        ],
     },
     {
         name: "Using kujira.rs",
