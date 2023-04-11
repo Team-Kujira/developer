@@ -1,7 +1,6 @@
 ---
 title: Kujira Developer Documentation
 description: Hub for all developer documentation for projects building on Kujira.
-slug: /
 ---
 
 Welcome to the official Kujira documentation portal. Here you will find all the technical documentation you need to get started with building on Kujira!

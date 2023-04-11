@@ -8,6 +8,8 @@ export type Route = {
 export const DIRECTORY_NAMES: { [key: string]: string } = {
     "": "Documentation",
     "x/": "Core Modules",
+    "sc/": "Smart Contracts",
+    "kujira-rs/": "kujira.rs",
 };
 
 export const ROUTES: Route[] = [
