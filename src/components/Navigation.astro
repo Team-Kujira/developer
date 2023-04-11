@@ -1,0 +1,70 @@
+---
+import { DIRECTORY_NAMES, ROUTES, Route } from "../navigation";
+import RouteItem from "./RouteItem.astro";
+import type { CollectionEntry } from "astro:content";
+type Props = CollectionEntry<"docs">;
+
+const { post } = Astro.props;
+
+function getPrefixes(str: string): string[] {
+  // remove last / if present
+  if (str[str.length - 1] === "/") {
+    str = str.slice(0, -1);
+  }
+  const parts: string[] = str.split("/");
+  if (parts.length === 1 && parts[0] === "") {
+    return [];
+  }
+  return parts.reduce((acc: string[], part: string, i: number) => {
+    const prefix = i === parts.length - 1 ? part : part + "/";
+    const prev = acc[i - 1] || "";
+    acc.push(prev + prefix);
+    return acc;
+  }, []);
+}
+let prefixes = [""].concat(getPrefixes(post.slug));
+let path = prefixes.map((prefix) => {
+  const display = DIRECTORY_NAMES[prefix] || post.data.title;
+  return {
+    display,
+    path: prefix,
+    last: prefix === prefixes[prefixes.length - 1],
+  };
+});
+---
+
+<div class="w-screen flex">
+  <nav
+    class="hidden md:block max-w-xs w-80 h-screen text-sm sticky top-0 bg-kujira-blacker "
+  >
+    <div class="flex flex-col h-full border-r">
+      <div class="border-b h-12 flex items-center mb-2">
+        <div class="pl-6">
+          <h2 class="font-medium">Developer Portal</h2>
+        </div>
+      </div>
+      <div class="flex flex-col flex-1 overflow-y-scroll">
+        {ROUTES.map((route) => <RouteItem route={route} depth={0} />)}
+      </div>
+    </div>
+  </nav>
+  <div class="flex flex-col h-full w-full">
+    <div
+      class="border-b h-12 flex items-center text-sm sticky top-0 bg-kujira-blacker"
+    >
+      <div class="pl-6 w-full whitespace-nowrap text-ellipsis overflow-x-clip">
+        {
+          path.map(({ display, path, last }) => (
+            <span class="font-medium">
+              {last && <span class="text-kujira-gray">{display}</span>}
+              {!last && (<a href={`/${path}`}>{display}</a><span class="text-kujira-gray"> / </span>)}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+    <main class="flex-1 p-6 max-w-4xl m-auto px-6 md:px-12">
+      <slot />
+    </main>
+  </div>
+</div>
