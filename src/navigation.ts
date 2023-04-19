@@ -33,54 +33,47 @@ export const ROUTES: Route[] = [
         defaultExpanded: true,
         subRoutes: [
             {
-                name: "Using Oracle Price Feeds",
+                name: "kujira.rs",
+                path: "/sc/kujira-rs",
+            },
+            {
+                name: "Oracle Integration Guide",
                 path: "/sc/oracles",
             },
+            // {
+            //     name: "Scheduling Recurring Actions",
+            //     path: "/sc/scheduler",
+            // },
             {
-                name: "Scheduling Recurring Actions",
-                path: "/sc/scheduler",
+                name: "Creating & Using Denoms",
+                path: "/sc/denom",
             },
             {
-                name: "Issuing Tokens from Smart Contracts",
-                path: "/sc/tokenfactory",
-            },
+                name: "The Callback Pattern",
+                path: "/sc/callbacks",
+            }
         ],
     },
-    {
-        name: "Using kujira.rs",
-        path: "/kujira-rs",
-        defaultExpanded: true,
-        subRoutes: [
-            {
-                name: "kujira-std",
-                path: "/kujira-rs/std",
-            },
-            {
-                name: "dApp Interfaces",
-                path: "/kujira-rs/dapp-interfaces",
-            },
-        ],
-    },
-    {
-        name: "Kujira Core"
-    },
-    {
-        name: "Core Modules",
-        path: "/x",
-        defaultExpanded: true,
-        subRoutes: [
-            {
-                name: "x/oracle",
-                path: "/x/oracle",
-            },
-            {
-                name: "x/scheduler",
-                path: "/x/scheduler",
-            },
-            {
-                name: "x/tokenfactory",
-                path: "/x/tokenfactory",
-            },
-        ]
-    },
+    // {
+    //     name: "Kujira Core"
+    // },
+    // {
+    //     name: "Core Modules",
+    //     path: "/x",
+    //     defaultExpanded: true,
+    //     subRoutes: [
+    //         {
+    //             name: "x/oracle",
+    //             path: "/x/oracle",
+    //         },
+    //         {
+    //             name: "x/scheduler",
+    //             path: "/x/scheduler",
+    //         },
+    //         {
+    //             name: "x/denom",
+    //             path: "/x/denom",
+    //         },
+    //     ]
+    // },
 ];

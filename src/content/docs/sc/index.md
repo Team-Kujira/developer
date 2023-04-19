@@ -41,6 +41,7 @@ pub fn instantiate(
 ```
 
 We strive for maximum composability and interoperability with other smart contracts on Kujira. We implore you to do the same. If you have a protocol launching on Kujira, we recommend reading our [recommended practices](/guides/practices) for smart contracts. Additionally, we have several guides for getting the most out of what Kujira core has to offer:
+* [What is the Kujira Standard Library?](/sc/kujira-std)
 * [Using the built-in oracles to simplify price feeds](/sc/oracles)
-* [Scheduling recurring tasks using the scheduler](/sc/scheduler)
-* [Issuing native tokens using the tokenfactory](/sc/tokenfactory)
+<!-- * [Scheduling recurring tasks using the scheduler](/sc/scheduler) -->
+* [Issuing native tokens using x/denom](/sc/denom)
