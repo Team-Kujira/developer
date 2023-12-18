@@ -23,5 +23,5 @@ In addition to the protocol-specific sub-crates, kujira-rs also includes a `kuji
 
 The kujira_std sub-crate includes:
 * Standardized interfaces for interacting with Kujira core modules, such as `x/denom`, and `x/oracle`, alongside supporting structs and methods.
-* A standardized interface for implementing the callback pattern, to help foster composability between smart contracts in the Kujira ecosystem.
+* A standardized interface for implementing [the callback pattern](/kujira), to help foster composability between smart contracts in the Kujira ecosystem.
 * Utilities for verifying Merkle proofs, fetching the fee address, creating token release schedules, and so on.
